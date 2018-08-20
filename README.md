@@ -9,12 +9,21 @@ The arrow color indicates git status.
 
 ![screenshot-hyper-ayu](screenshot.png)
 
-### Installation & Usage
+## Installation & Usage
 
-Run the [“apply theme” script](apply_theme.sh):
+Run the [“apply theme” script](./scripts/apply_theme.sh) from fish:
+
 ```sh
-source apply_theme.sh
+source apply_theme.fish
 ```
+
+or run as UNIX script:
+
+```sh
+cd scripts
+chmod u+x apply_theme.fish
+./apply_theme.fish
+``` 
 
 **WARNING:** This will clobber your existing prompt.
 
