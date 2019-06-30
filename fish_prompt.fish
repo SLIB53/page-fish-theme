@@ -3,10 +3,14 @@ function fish_prompt
 
     # print base dir
 
-    set_color --bold $fish_color_cwd
-    if test $PWD = $HOME >/dev/null ^/dev/null
+    if test $PWD = "/" >/dev/null ^/dev/null
+        set_color --bold $fish_color_cwd_root
+        printf \/
+    else if test $PWD = $HOME >/dev/null ^/dev/null
+        set_color --bold $fish_color_cwd
         printf \~
     else
+        set_color --bold $fish_color_cwd
         printf (basename $PWD)
     end
     printf ' '
