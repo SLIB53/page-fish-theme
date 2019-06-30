@@ -1,8 +1,11 @@
 #! /usr/bin/env fish
 
-mkdir -p ~/.config/fish/functions
+function apply_theme
+    mkdir -p ~/.config/fish/functions
+    cp fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
+end
 
-echo "Copying fish_prompt.fish to ~/.config/fish/functions/fish_prompt.fish..."
-cp fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
+echo "Applying theme..."
+apply_theme
 
 echo "Done!"
