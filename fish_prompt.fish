@@ -1,6 +1,9 @@
 function fish_prompt
     printf '\n'
 
+    set_color $fish_color_cwd_root
+    printf ' '
+
     # print base dir
 
     if test $PWD = "/" >/dev/null ^/dev/null
@@ -19,19 +22,19 @@ function fish_prompt
     # print indicator
 
     if git rev-parse --is-inside-work-tree >/dev/null ^/dev/null
-        
+
         # print branch
-        
+
         set_color normal
         set_color blue
         printf ' '
         printf (git symbolic-ref --short HEAD; or false); printf ' '
-        
+
 
         # print indicator
-        
+
         if test -z (git status --porcelain) >/dev/null ^/dev/null
-            
+
             # print clean indicator
 
             # XXX: inherit color
